@@ -4,6 +4,11 @@ import Restaurant from "../models/Restaurant";
 export let getRestaurantsByLatAndLng = (req: Request, res: Response) => {
   const lat:number = +req.query.lat!;
   const lon:number = +req.query.lon!;
+  if(!lat && !lon){
+    res.status(400).json({
+      "error": "Please provide latitude and longitude!!!"
+    })
+  }
   res.json({
     "sections": [
       {

@@ -12,7 +12,7 @@ export default class Restaurant {
 
   static getPopularRestaurants(lat: number, lon: number): Restaurant[] {
     const restaurants = Restaurant.getNearbyRestaurants(lat, lon);
-    restaurants.sort(function(a: Restaurant, b: Restaurant){
+    restaurants.sort((a: Restaurant, b: Restaurant) => {
       return b.popularity - a.popularity;
     });
     return restaurants
@@ -20,7 +20,7 @@ export default class Restaurant {
 
   static getNewRestaurants(lat: number, lon: number): Restaurant[] {
     const restaurants = Restaurant.getNearbyRestaurants(lat, lon);
-    restaurants.sort(function(a: Restaurant, b: Restaurant){
+    restaurants.sort((a: Restaurant, b: Restaurant) => {
       return new Date(b.launch_date).getTime() - new Date(a.launch_date).getTime();
     });
     return restaurants;
