@@ -8,5 +8,5 @@ const app = express();
 app.get('/discovery', getRestaurantsByLatAndLng)
 
 app.listen(8000, () => {
-  console.log('Port: 8080');
+  console.log('Port: 8000');
 })
